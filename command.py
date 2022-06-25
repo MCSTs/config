@@ -14,10 +14,10 @@ class fzf_select(Command):
         import os.path
         if self.quantifier:
             # match only directories
-            command='fdfind --type d --hidden --follow -E ".git" . /etc /home/mcst | fzf +m'
+            command='fdfind --type d --hidden --follow -E ".git" -E "node_modules" . /etc /home/mcst | fzf +m'
         else:
             # match files and directories
-            command='fdfind --hidden --follow -E ".git" . /etc /home/mcst | fzf +m'
+            command='fdfind --hidden --follow -E ".git" -E "node_modules" . /etc /home/mcst | fzf +m'
         fzf = self.fm.execute_command(command, universal_newlines=True, stdout=subprocess.PIPE)
         stdout, stderr = fzf.communicate()
         if fzf.returncode == 0:
@@ -26,7 +26,8 @@ class fzf_select(Command):
                 self.fm.cd(fzf_file)
             else:
                 self.fm.select_file(fzf_file)
-        
-        
+
+
+
 # rc.conf
 # map <C-f> fzf_select
