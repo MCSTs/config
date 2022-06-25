@@ -1,8 +1,10 @@
 vim-gtk
 
-ranger
 fzf
 ripgrep
+fd-find
+ranger
+
 htop
 
 fish
