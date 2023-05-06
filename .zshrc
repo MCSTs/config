@@ -111,9 +111,12 @@ export B="/home/mcst/.bashrc"
 export Z="/home/mcst/.zshrc"
 
 # alias
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 alias sl='ls'
 alias ..='cd ..'
-alias ...='cd ../..'
+# alias ...='cd ../..'
 alias cdg='cd /home/mcst/github'
 alias cds='cd /mnt/d/STM32Project'
 alias cdc='cd /mnt/d/c_project/CWORKSPACE'

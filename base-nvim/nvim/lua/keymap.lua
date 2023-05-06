@@ -8,6 +8,12 @@ local cmd = vim.cmd
 keymap.set("n", "s", "<nop>")
 keymap.set("n", "Q", "<nop>")
 
+-- navigator
+keymap.set("n", "<c-j>", "<c-w>j", {desc = "move down"})
+keymap.set("n", "<c-k>", "<c-w>k", {desc = "move up"})
+keymap.set("n", "<c-h>", "<c-w>h", {desc = "move left"})
+keymap.set("n", "<c-l>", "<c-w>l", {desc = "move right"})
+
 keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "<leader>q", vim.cmd.quit)
 keymap.set("n", "<leader>w", vim.cmd.write)
