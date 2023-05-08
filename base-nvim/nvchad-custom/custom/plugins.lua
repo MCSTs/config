@@ -154,20 +154,15 @@ local plugins = {
       require("custom.configs.lazygit")
     end
   },
-  -- {
-  --   "goolord/alpha-nvim",
-  --   -- after = "base46",
-  --   disable = false,
-  --   config = function()
-  --     require("alpha").setup()
-  --   end,
-  -- },
-
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+  {
+    "mbbill/undotree",
+    init = function()
+      require("core.utils").lazy_load "undotree"
+    end,
+    config = function()
+      require("custom.configs.undotree")
+    end
+  },
 }
 
 return plugins

@@ -51,7 +51,9 @@ M.general = {
     -- SymbolsOutline
     ["<leader>so"] = { ":SymbolsOutline<CR>", "Toggle SymbolsOutline", opts = { silent = true } },
     -- markdown preview
-    ["<leader>mp"] = { ":MarkdownPreviewToggle<cr>", "MarkdownPreviewToggle", opts = {silent = true} },
+    ["<leader>mp"] = { ":MarkdownPreviewToggle<cr>", "MarkdownPreviewToggle", opts = { silent = true } },
+    -- ColorizerToggle
+    ["<leader><leader>c"] = { ":ColorizerToggle<cr>", "ColorizerToggle", opts = { silent = true } },
   },
   v = {
     -- cursor move
@@ -59,9 +61,12 @@ M.general = {
     ["W"] = { "0", "move to the start of line" },
   },
   t = {
-    ["<C-p>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "escape terminal mode" },
+    ["<C-j>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "escape terminal mode" },
   },
-  i = {},
+  i = {
+    ["<C-l>"] = { "<Right>", "move right" },
+    ["<C-h>"] = { "<Left>", "move left" },
+  },
 }
 
 M.disabled = {
