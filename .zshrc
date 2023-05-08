@@ -109,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # export
 export B="/home/mcst/.bashrc"
 export Z="/home/mcst/.zshrc"
+export EDITOR="nvim"
 
 # alias
 alias ll='ls -alF'
@@ -121,6 +122,19 @@ alias cdg='cd /home/mcst/github'
 alias cds='cd /mnt/d/STM32Project'
 alias cdc='cd /mnt/d/c_project/CWORKSPACE'
 alias cdn='cd /mnt/d/QQQ/zzzzz/Stage4-LONG/Notes'
+# root中使用用户下的环境变量
+alias sudo='sudo -E'
 
 alias t='tmux'
 alias lg='lazygit'
+alias ra='ranger'
+
+
+# === fzf =====
+export FZF_DEFAULT_OPTS='--bind ctrl-e:down,ctrl-u:up --preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} || cat {}) 2> /dev/null | head -500"'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_COMPLETION_TRIGGER='\'
+export FZF_TMUX_HEIGHT='80%'
+export FZF_PREVIEW_COMMAND='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} ||  cat {}) 2> /dev/null | head -500'
+source ~/.config/zsh/completion.zsh
+source ~/.config/zsh/key-bindings.zsh
