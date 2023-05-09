@@ -10,6 +10,7 @@ M.general = {
     -- quit and save
     ["<leader>w"] = { ":w<cr>", "Save file" },
     ["<leader>q"] = { ":q<cr>", "quit" },
+    ["<leader><leader>q"] = { ":q!<cr>", "force quit" },
 
     -- split windows
     ["<leader>sl"] = { "<c-w>v", "split windos vertical" },
