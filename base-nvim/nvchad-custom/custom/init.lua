@@ -51,6 +51,11 @@ opt.updatetime = 100
 
 opt.colorcolumn = "80"
 
+-- file encoding & coding
+opt.fileencodings = "utf-8,ucs-bom,gb18030,gbk,gb2312,cp936"
+opt.termencoding = "utf-8"
+opt.encoding = "utf-8"
+
 -- opt.cmdheight = 0
 
 -- ufo
