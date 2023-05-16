@@ -125,9 +125,18 @@ alias cdn='cd /mnt/d/QQQ/zzzzz/Stage4-LONG/Notes'
 # root中使用用户下的环境变量
 alias sudo='sudo -E'
 
+alias et='exit'
+alias c='clear'
+
+alias py='python'
+alias vim='nvim'
 alias t='tmux'
 alias lg='lazygit'
 alias ra='ranger'
+
+# /etc/hosts : 
+#     185.199.109.133 raw.githubusercontent.com
+alias GetCmake='wget https://raw.githubusercontent.com/MCSTs/config/master/mySetting/CMakeLists.txt'
 
 
 # === fzf =====

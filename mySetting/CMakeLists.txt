@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.1.0)
 
 # windows下使用mingw环境编译
 # cmake -G "MinGW Makefiles"
-set(CMAKE_GENERATOR "MinGW Makefiles")  
+# set(CMAKE_GENERATOR "MinGW Makefiles")  
 # set(CMAKE_CXX_COMPILER "D:/programs/mingw64/bin/g++.exe")
 # set(CMAKE_C_COMPILER "D:/programs/mingw64/bin/gcc.exe")
 
