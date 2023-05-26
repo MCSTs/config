@@ -66,6 +66,10 @@ local plugins = {
           normal_cur = "<leader>ss",
           normal_line = "<leader>S",
           normal_cur_line = "<leader>SS",
+          visual = "S",
+          visual_line = "gS",
+          delete = "ds",
+          change = "cs",
         },
       }
     end,
@@ -161,6 +165,15 @@ local plugins = {
     end,
     config = function()
       require("custom.configs.undotree")
+    end
+  },
+  {
+    "theniceboy/joshuto.nvim",
+    init = function()
+      require("core.utils").lazy_load "joshuto.nvim"
+    end,
+    config = function()
+      require("custom.configs.joshuto")
     end
   },
 }

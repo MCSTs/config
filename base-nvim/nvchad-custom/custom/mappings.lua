@@ -196,6 +196,12 @@ M.gitsigns = {
       end,
       "undo stage hunk",
     },
+    ["<leader>gg"] = {
+      function()
+        require("gitsigns").toggle_signs()
+      end,
+      "Toggle gitsigns",
+    },
   },
 }
 
