@@ -51,8 +51,6 @@ M.general = {
     ["<leader>sm"] = { ":MaximizerToggle<CR>", "MaximizerToggle", opts = { silent = true } },
     -- SymbolsOutline
     ["<leader>so"] = { ":SymbolsOutline<CR>", "Toggle SymbolsOutline", opts = { silent = true } },
-    -- markdown preview
-    ["<leader>mp"] = { ":MarkdownPreviewToggle<cr>", "MarkdownPreviewToggle", opts = { silent = true } },
     -- ColorizerToggle
     ["<leader><leader>c"] = { ":ColorizerToggle<cr>", "ColorizerToggle", opts = { silent = true } },
   },

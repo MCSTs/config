@@ -133,6 +133,7 @@ alias vim='nvim'
 alias t='tmux'
 alias lg='lazygit'
 alias ra='ranger'
+alias jo='joshuto'
 
 # /etc/hosts : 
 #     185.199.109.133 raw.githubusercontent.com

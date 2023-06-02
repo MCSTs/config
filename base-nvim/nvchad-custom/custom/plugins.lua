@@ -94,9 +94,7 @@ local plugins = {
   },
   {
     "simrat39/symbols-outline.nvim",
-    init = function()
-      require("core.utils").lazy_load "symbols-outline.nvim"
-    end,
+    cmd = "SymbolsOutline",
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
       require("symbols-outline").setup()
@@ -123,36 +121,29 @@ local plugins = {
   },
   {
     "eandrju/cellular-automaton.nvim",
-    init = function()
-      require("core.utils").lazy_load "cellular-automaton.nvim"
-    end,
+    ft = { "c", "cpp", "lua" },
     config = function()
       require("custom.configs.automaton")
     end
   },
   {
     "iamcco/markdown-preview.nvim",
-    init = function()
-      require("core.utils").lazy_load "markdown-preview.nvim"
-    end,
+    ft = "markdown",
     config = function()
       vim.fn["mkdp#util#install"]()
+      require("custom.configs.markdown-preview")
     end,
   },
   {
     "mg979/vim-visual-multi",
-    init = function()
-      require("core.utils").lazy_load "vim-visual-multi"
-    end,
+    keys = { "<C-n>", "<C-UP>", "<C-DOWN>", { "<C-n>", mode = "v" } },
     branch = "master",
     -- config = function()
     -- end,
   },
   {
     "kdheepak/lazygit.nvim",
-    init = function()
-      require("core.utils").lazy_load "lazygit.nvim"
-    end,
+    keys = { "<leader>lg" },
     config = function()
       -- require("telescope").load_extension("lazygit")
       require("custom.configs.lazygit")
@@ -169,9 +160,7 @@ local plugins = {
   },
   {
     "theniceboy/joshuto.nvim",
-    init = function()
-      require("core.utils").lazy_load "joshuto.nvim"
-    end,
+    keys = { "<leader>jo" },
     config = function()
       require("custom.configs.joshuto")
     end
