@@ -17,10 +17,25 @@ M.general = {
     ["<leader>sj"] = { "<c-w>s", "split windos horizintal" },
 
     -- buffer
-    ["<A-n>"] = { ":bnext<cr>", "next buffer" },
-    ["<A-p>"] = { ":bprevious<cr>", "previous buffer" },
+    ["L"] = { ":bnext<cr>", "next buffer" },
+    ["H"] = { ":bprevious<cr>", "previous buffer" },
     ["<leader>\\"] = { "<c-^>", "switch buffer" },
     ["<leader>D"] = { ":%bd<cr>", "delete all buffer" },
+
+    -- Move line
+    ["<A-j>"] = { "<cmd>m .+1<cr>==", "Move down" },
+    ["<A-k>"] = { "<cmd>m .-2<cr>==", "Move up" },
+
+    -- Beter search
+    ["*"] = { "*N" },
+    ["#"] = { "#N" },
+    ["gw"] = { "*", "Search current word", opts = { remap = true } },
+
+    -- Toggle case
+    ["`"] = { "~" },
+
+    -- Create new buffer
+    ["<leader>nf"] = { "<cmd>enew<cr>", "new file" },
 
     -- noh
     ["<leader><cr>"] = { ":noh<cr>", "cancel highlights", opts = { silent = true } },
@@ -37,8 +52,8 @@ M.general = {
 
     -- tab
     ["<A-t>"] = { ":tabnew %<cr>", "new tab", opts = { silent = true } },
-    ["<A-j>"] = { ":tabNext<cr>", "next tab", opts = { silent = true } },
-    ["<A-k>"] = { ":tabprevious<cr>", "previous tab", opts = { silent = true } },
+    ["<A-n>"] = { ":tabNext<cr>", "next tab", opts = { silent = true } },
+    ["<A-p>"] = { ":tabprevious<cr>", "previous tab", opts = { silent = true } },
     ["<A-q>"] = { ":tabclose<cr>", "close tab", opts = { silent = true } },
 
     -- resize windows
@@ -58,13 +73,32 @@ M.general = {
     -- cursor move
     ["E"] = { "$", "move to the end of line" },
     ["W"] = { "0", "move to the start of line" },
+    -- Move line
+    ["<A-j>"] = { ":m '>+1<cr>gv=gv", "Move down" },
+    ["<A-k>"] = { ":m '<-2<cr>gv=gv", "Move up" },
+    -- better indenting
+    ["<"] = { "<gv" },
+    [">"] = { ">gv" },
+    -- toggle case
+    ["`"] = { "~" },
   },
   t = {
     ["<C-j>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "escape terminal mode" },
+    -- ["<C-j>"] = { "<cmd>wincmd j<cr>" },
+    ["<C-k>"] = { "<cmd>wincmd k<cr>" },
+    ["<C-h>"] = { "<cmd>wincmd h<cr>" },
+    -- ["<C-l>"] = { "<cmd>wincmd l<cr>" },
   },
   i = {
     ["<C-l>"] = { "<Right>", "move right" },
     ["<C-h>"] = { "<Left>", "move left" },
+    -- Move line
+    ["<A-j>"] = { "<esc><cmd>m .+1<cr>==gi", "Move down" },
+    ["<A-k>"] = { "<esc><cmd>m .-2<cr>==gi", "Move up" },
+    -- Add undo break-points
+    [","] = { ",<c-g>u" },
+    ["."] = { ".<c-g>u" },
+    [";"] = { ";<c-g>u" },
   },
 }
 

@@ -151,9 +151,7 @@ local plugins = {
   },
   {
     "mbbill/undotree",
-    init = function()
-      require("core.utils").lazy_load "undotree"
-    end,
+    keys = "<leader>u",
     config = function()
       require("custom.configs.undotree")
     end
@@ -163,6 +161,23 @@ local plugins = {
     keys = { "<leader>jo" },
     config = function()
       require("custom.configs.joshuto")
+    end
+  },
+  {
+    "ggandor/flit.nvim",
+    dependencies = {
+      "tpope/vim-repeat",
+      "ggandor/leap.nvim",
+    },
+    keys = { "f", "F", "t", "T" },
+    config = function()
+      require('flit').setup {
+        keys = { f = 'f', F = 'F', t = 't', T = 'T' },
+        -- A string like "nv", "nvo", "o", etc.
+        labeled_modes = "v",
+        multiline = true,
+        opts = {}
+      }
     end
   },
 }
