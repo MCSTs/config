@@ -80,7 +80,7 @@ M.cmp = {
     ["<C-j>"] = cmp.mapping.close(),
     ["<C-Space>"] = noop,
     -- ["<C-f>"] = noop,
-    ["<C-e>"] = noop,
+    -- ["<C-e>"] = noop,
   },
 }
 

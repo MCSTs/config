@@ -43,7 +43,13 @@ opt.incsearch = true
 opt.termguicolors = true
 
 opt.scrolloff = 5
+opt.sidescrolloff = 8 -- Columns of context
 opt.signcolumn = "yes"
+
+opt.splitbelow = true -- Put new windows below current
+opt.splitright = true -- Put new windows right of current
+
+opt.list = true -- Show some invisible characters (tabs...
 
 opt.isfname:append "@-@"
 

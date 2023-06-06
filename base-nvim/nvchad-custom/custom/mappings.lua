@@ -51,10 +51,12 @@ M.general = {
     ["W"] = { "0", "move to the start of line" },
 
     -- tab
-    ["<A-t>"] = { ":tabnew %<cr>", "new tab", opts = { silent = true } },
-    ["<A-n>"] = { ":tabNext<cr>", "next tab", opts = { silent = true } },
+    ["<A-t>"] = { ":tabnew<cr>", "new tab", opts = { silent = true } },
+    ["<A-T>"] = { ":tabnew %<cr>", "new tab(current buffer)", opts = { silent = true } },
+    ["<A-n>"] = { ":tabnext<cr>", "next tab", opts = { silent = true } },
     ["<A-p>"] = { ":tabprevious<cr>", "previous tab", opts = { silent = true } },
     ["<A-q>"] = { ":tabclose<cr>", "close tab", opts = { silent = true } },
+    ["<A-Q>"] = { ":tabonly<cr>", "close all tabs except current tab", opts = { silent = true } },
 
     -- resize windows
     ["<up>"] = { ":res +5<cr>", "resize up" },
@@ -157,7 +159,7 @@ M.disabled = {
   },
   i = {
     ["<C-b>"] = "",
-    ["<C-e>"] = "",
+    -- ["<C-e>"] = "",
     ["<C-h>"] = "",
     ["<C-l>"] = "",
     ["<C-j>"] = "",
@@ -282,6 +284,22 @@ M.lspconfig = {
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       end,
       "list workspace folders",
+    },
+  },
+  i = {
+    ["<C-e>"] = {
+      function()
+        vim.lsp.buf.signature_help()
+      end,
+      "lsp signature_help",
+    },
+  },
+  v = {
+    ["<leader>fm"] = {
+      function()
+        vim.lsp.buf.format({ async = true })
+      end,
+      "lsp formatting range",
     },
   },
 }
