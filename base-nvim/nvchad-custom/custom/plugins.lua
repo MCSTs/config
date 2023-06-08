@@ -31,6 +31,9 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
   },
 
   {
@@ -179,6 +182,13 @@ local plugins = {
         opts = {}
       }
     end
+  },
+  {
+    "folke/zen-mode.nvim",
+    opts = require("custom.configs.zen-mode"),
+    keys = {
+      { "<leader>zm", "<cmd>ZenMode<cr>", desc = "Toggle zen-mode" }
+    },
   },
 }
 
