@@ -196,6 +196,18 @@ local plugins = {
       { "<leader>fy", "<cmd>Telescope symbols<cr>", desc = "Symblos list" },
     },
   },
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+    },
+    opts = require("custom.configs.barbecue"),
+    init = function()
+      require("core.utils").lazy_load "barbecue"
+    end,
+  }
 }
 
 return plugins
