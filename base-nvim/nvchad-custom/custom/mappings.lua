@@ -200,6 +200,9 @@ M.telescope = {
     ["<leader>fg"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
     ["<leader>fk"] = { "<cmd> Telescope keymaps<CR>", "keymaps" },
     ["<leader>bm"] = { "<cmd> Telescope marks<CR>", "find marks" },
+    ["<leader>fs"] = { "<cmd> Telescope lsp_document_symbols<CR>", "find symbols(current buffer)" },
+    ["<leader>fS"] = { "<cmd> Telescope lsp_dynamic_workspace_symbols<CR>", "find symbols(current workspace)" },
+    ["<leader>fr"] = { "<cmd> Telescope lsp_references<CR>", "find symbols reference(current workspace)" },
   },
 }
 

@@ -190,6 +190,12 @@ local plugins = {
       { "<leader>zm", "<cmd>ZenMode<cr>", desc = "Toggle zen-mode" }
     },
   },
+  {
+    "nvim-telescope/telescope-symbols.nvim",
+    keys = {
+      { "<leader>fy", "<cmd>Telescope symbols<cr>", desc = "Symblos list" },
+    },
+  },
 }
 
 return plugins
