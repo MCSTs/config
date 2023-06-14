@@ -5,6 +5,7 @@ audio_default	= [
 ]
 
 image_default	= [
+	{ command = "Honeyview", fork = true, silent = true },
 	{ command = "ImageGlass", fork = true, silent = true },
 	{ command = "qimgv", args = [ "--" ], fork = true, silent = true },
 	{ command = "krita", args = [ "--" ], fork = true, silent = true },
@@ -76,6 +77,7 @@ mp4.inherit	= "video_default"
 ts.inherit	= "video_default"
 webm.inherit	= "video_default"
 wmv.inherit	= "video_default"
+rmvb.inherit	= "video_default"
 
 ## text formats
 build.inherit	= "text_default"

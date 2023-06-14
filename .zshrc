@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/home/mcst/.local/bin:${PATH}
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -127,6 +127,9 @@ alias sudo='sudo -E'
 
 alias et='exit'
 alias c='clear'
+ 
+alias ch='chrome'
+# alias suma='SumatraPDF'
 
 alias py='python'
 alias vim='nvim'
@@ -148,3 +151,21 @@ export FZF_TMUX_HEIGHT='80%'
 export FZF_PREVIEW_COMMAND='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} ||  cat {}) 2> /dev/null | head -500'
 source ~/.config/zsh/completion.zsh
 source ~/.config/zsh/key-bindings.zsh
+
+alias switchLazyvim='mv /home/mcst/.cache/nvim /home/mcst/.cache/nvim-bac-nvchad;
+                        mv /home/mcst/.config/nvim/ /home/mcst/.config/nvim-bac-nvchad;
+                        mv /home/mcst/.local/share/nvim/ /home/mcst/.local/share/nvim-bac-nvchad;
+                        mv /home/mcst/.cache/nvim-bac-lazyvim /home/mcst/.cache/nvim;
+                        mv /home/mcst/.config/nvim-bac-lazyvim /home/mcst/.config/nvim;
+                        mv /home/mcst/.local/share/nvim-bac-lazyvim /home/mcst/.local/share/nvim;'
+
+alias switchNvchad='mv /home/mcst/.cache/nvim /home/mcst/.cache/nvim-bac-lazyvim;
+                        mv /home/mcst/.config/nvim/ /home/mcst/.config/nvim-bac-lazyvim;
+                        mv /home/mcst/.local/share/nvim/ /home/mcst/.local/share/nvim-bac-lazyvim;
+                        mv /home/mcst/.cache/nvim-bac-nvchad /home/mcst/.cache/nvim;
+                        mv /home/mcst/.config/nvim-bac-nvchad /home/mcst/.config/nvim;
+                        mv /home/mcst/.local/share/nvim-bac-nvchad /home/mcst/.local/share/nvim;'
+
+# >>> xmake >>>
+test -f "/home/mcst/.xmake/profile" && source "/home/mcst/.xmake/profile"
+# <<< xmake <<<

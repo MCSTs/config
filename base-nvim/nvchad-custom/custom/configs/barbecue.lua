@@ -19,7 +19,7 @@ M = {
   ---Filetypes not to enable winbar in.
   ---
   ---@type string[]
-  exclude_filetypes = { "netrw", "toggleterm" },
+  exclude_filetypes = { "netrw", "toggleterm", "markdown", "zsh", "cmake" },
 
   modifiers = {
     ---Filename modifiers applied to dirname.

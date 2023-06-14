@@ -78,7 +78,7 @@ handle_extension() {
 
         ## PDF
         pdf)
-            ## Preview as text conversion
+            # Preview as text conversion
             pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - | \
                 fmt -w "${PREVIEW_WIDTH}" && exit 0
             mutool draw -F txt -i -- "${FILE_PATH}" 1-10 | \
@@ -186,6 +186,7 @@ handle_mime() {
         ## Image
         image/*)
             ## Preview as text conversion
+            # Honeyview "${FILE_PATH}" && exit 0
             exiftool "${FILE_PATH}" && exit 0
             exit 1;;
 
