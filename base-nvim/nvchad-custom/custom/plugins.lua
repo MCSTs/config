@@ -207,7 +207,51 @@ local plugins = {
     init = function()
       require("core.utils").lazy_load "barbecue"
     end,
-  }
+  },
+  {
+    "JuanZoran/Trans.nvim",
+    build = function() require 'Trans'.install() end,
+    keys = {
+      -- 可以换成其他你想映射的键
+      { '<leader>mm', mode = { 'n', 'x' },       '<Cmd>Translate<CR>',             desc = ' Translate' },
+      { '<leader>mk', mode = { 'n', 'x' },       '<Cmd>TransPlay<CR>',             desc = ' Auto Play' },
+      -- 目前这个功能的视窗还没有做好，可以在配置里将view.i改成hover
+      { '<leader>mi', '<Cmd>TranslateInput<CR>', desc = ' Translate From Input' },
+    },
+    dependencies = { 'kkharji/sqlite.lua', },
+    opts = {
+      -- your configuration there
+    }
+  },
+  {
+    "windwp/nvim-spectre",
+    keys = {
+      {
+        '<leader><leader>s',
+        mode = { 'n' },
+        '<cmd>lua require("spectre").open()<CR>',
+        desc =
+        "Open Spectre"
+      },
+      {
+        '<leader>cs',
+        mode = { 'n', 'v' },
+        '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
+        desc =
+        "Search current word"
+      },
+      {
+        '<leader>cf',
+        mode = { 'n' },
+        '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
+        desc =
+        "Search on current file"
+      },
+    },
+    config = function()
+      require('spectre').setup()
+    end,
+  },
 }
 
 return plugins
