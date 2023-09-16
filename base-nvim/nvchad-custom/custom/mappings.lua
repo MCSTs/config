@@ -17,8 +17,8 @@ M.general = {
     ["<leader>sj"] = { "<c-w>s", "split windos horizintal" },
 
     -- buffer
-    ["L"] = { ":bnext<cr>", "next buffer" },
-    ["H"] = { ":bprevious<cr>", "previous buffer" },
+    ["L"] = { "<cmd>bnext<cr>", "next buffer" },
+    ["H"] = { "<cmd>bprevious<cr>", "previous buffer" },
     ["<leader>\\"] = { "<c-^>", "switch buffer" },
     ["<leader>D"] = { ":%bd<cr>", "delete all buffer" },
 
@@ -42,6 +42,8 @@ M.general = {
 
     -- jump to init.lua
     ["<leader>rc"] = { "<cmd> e $MYVIMRC <cr>", "Jump to init.lua file", opts = { silent = true } },
+    ["<leader><leader>i"] = { "<cmd> e ~/github/myStuff/config/base-nvim/nvchad-custom/custom/init.lua <cr>",
+      "Jump to github/init.lua", opts = { silent = true } },
 
     -- workDir
     ["<leader>cd"] = { "<cmd> lcd %:p:h <cr>", "set parentDir" },
@@ -65,11 +67,13 @@ M.general = {
     ["<right>"] = { ":vertical resize+5<cr>", "resize right" },
 
     -- MaximizerToggle
-    ["<leader>sm"] = { ":MaximizerToggle<CR>", "MaximizerToggle", opts = { silent = true } },
+    -- ["<leader>sm"] = { ":MaximizerToggle<CR>", "MaximizerToggle", opts = { silent = true } },
     -- SymbolsOutline
     ["<leader>so"] = { ":SymbolsOutline<CR>", "Toggle SymbolsOutline", opts = { silent = true } },
     -- ColorizerToggle
     ["<leader><leader>c"] = { ":ColorizerToggle<cr>", "ColorizerToggle", opts = { silent = true } },
+    -- lazy
+    ["<leader>la"] = { ":Lazy<cr>", "Open LazyMenu", opts = { silent = true } },
   },
   v = {
     -- cursor move
@@ -85,7 +89,8 @@ M.general = {
     ["`"] = { "~" },
   },
   t = {
-    ["<C-j>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "escape terminal mode" },
+    ["<C-j>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "escape terminal mode", {
+      noremap = true } },
     -- ["<C-j>"] = { "<cmd>wincmd j<cr>" },
     ["<C-k>"] = { "<cmd>wincmd k<cr>" },
     ["<C-h>"] = { "<cmd>wincmd h<cr>" },
@@ -94,6 +99,7 @@ M.general = {
   i = {
     ["<C-l>"] = { "<Right>", "move right" },
     ["<C-h>"] = { "<Left>", "move left" },
+    ["<C-j>"] = { "<Esc>A", "move end-of-line"},
     -- Move line
     ["<A-j>"] = { "<esc><cmd>m .+1<cr>==gi", "Move down" },
     ["<A-k>"] = { "<esc><cmd>m .-2<cr>==gi", "Move up" },

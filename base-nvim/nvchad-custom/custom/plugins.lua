@@ -91,12 +91,18 @@ local plugins = {
   },
   {
     "szw/vim-maximizer",
-    init = function()
-      require("core.utils").lazy_load "vim-maximizer"
-    end,
+    keys = {
+      { "<leader>sm", "<cmd>MaximizerToggle<cr>", desc = "Toggle Maximizer" },
+    }
+    -- init = function()
+    --   require("core.utils").lazy_load "vim-maximizer"
+    -- end,
   },
   {
     "simrat39/symbols-outline.nvim",
+    -- init = function()
+    --   require("core.utils").lazy_load "symbols-outline.nvim"
+    -- end,
     cmd = "SymbolsOutline",
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
@@ -124,6 +130,9 @@ local plugins = {
   },
   {
     "eandrju/cellular-automaton.nvim",
+    -- init = function()
+    --   require("core.utils").lazy_load "cellular-automaton.nvim"
+    -- end,
     ft = { "c", "cpp", "lua" },
     config = function()
       require("custom.configs.automaton")
@@ -131,6 +140,9 @@ local plugins = {
   },
   {
     "iamcco/markdown-preview.nvim",
+    -- init = function()
+    --   require("core.utils").lazy_load "markdown-preview.nvim"
+    -- end,
     ft = "markdown",
     config = function()
       vim.fn["mkdp#util#install"]()
@@ -139,13 +151,33 @@ local plugins = {
   },
   {
     "mg979/vim-visual-multi",
-    keys = { "<C-n>", "<C-UP>", "<C-DOWN>", { "<C-n>", mode = "v" } },
+    keys = {
+      {
+        "<C-n>",
+        mode = { 'n', 'v' },
+        '<Plug>(VM-Find-Under)'
+      },
+      {
+        '<M-C-j>',
+        mode = { 'n' },
+        '<Plug>(VM-Add-Cursor-Down)'
+      },
+      {
+        '<M-C-k>',
+        mode = { 'n' },
+        '<Plug>(VM-Add-Cursor-Up)'
+      }
+    },
+    config = function()
+      require("custom.configs.vim-visual-multi")
+    end,
     branch = "master",
-    -- config = function()
-    -- end,
   },
   {
     "kdheepak/lazygit.nvim",
+    -- init = function()
+    --   require("core.utils").lazy_load "lazygit.nvim"
+    -- end,
     keys = { "<leader>lg" },
     config = function()
       -- require("telescope").load_extension("lazygit")
@@ -154,6 +186,10 @@ local plugins = {
   },
   {
     "mbbill/undotree",
+    -- init = function()
+    --   require("core.utils").lazy_load "undotree"
+    -- end,
+    -- cmd = "UndotreeToggle",
     keys = "<leader>u",
     config = function()
       require("custom.configs.undotree")
@@ -161,6 +197,9 @@ local plugins = {
   },
   {
     "theniceboy/joshuto.nvim",
+    -- init = function()
+    --   require("core.utils").lazy_load "joshuto.nvim"
+    -- end,
     keys = { "<leader>jo" },
     config = function()
       require("custom.configs.joshuto")
@@ -189,6 +228,9 @@ local plugins = {
     keys = {
       { "<leader>zm", "<cmd>ZenMode<cr>", desc = "Toggle zen-mode" }
     },
+    -- config = function()
+    --   require("custom.configs.zen-mode")
+    -- end
   },
   {
     "nvim-telescope/telescope-symbols.nvim",

@@ -17,6 +17,12 @@ local sources = {
 
   -- cpp
   b.formatting.clang_format,
+
+  b.formatting.python_format,
+  b.formatting.rustfmt,
+
+  -- C#
+  b.formatting.csharpier,
 }
 
 null_ls.setup {

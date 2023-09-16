@@ -3,7 +3,7 @@ local M = {}
 M.treesitter = {
   ensure_installed = {
     "vim",
-    "bash",
+    -- "bash",
     "lua",
     "c",
     "cpp",
@@ -96,6 +96,9 @@ M.treesitter = {
       goto_previous_start = {
         ["[m"] = "@function.outer",
         ["[["] = "@class.outer",
+        ["[s"] = { query = "@scope", query_group = "locals", desc = "Previous scope" },
+        ["[z"] = { query = "@fold", query_group = "folds", desc = "Previous fold" },
+        ["[o"] = "@loop.*",
       },
       goto_previous_end = {
         ["[M"] = "@function.outer",

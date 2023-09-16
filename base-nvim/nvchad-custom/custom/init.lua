@@ -27,6 +27,10 @@ opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
+vim.cmd([[
+  autocmd FileType cs setlocal ts=4 sts=4 sw=4 expandtab
+  " autocmd FileType cs, cpp, py setlocal ts=4 sts=4 sw=4 expandtab
+]])
 
 opt.clipboard:append "unnamedplus"
 
